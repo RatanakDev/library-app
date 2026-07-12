@@ -1,10 +1,9 @@
 package com.mylibrary.libraryapp.seeder;
 
 import com.mylibrary.libraryapp.entities.UserEntity;
-import com.mylibrary.libraryapp.entities.GenderEnum;
-import com.mylibrary.libraryapp.entities.RoleEnum;
+import com.mylibrary.libraryapp.entities.Enum.GenderEnum;
+import com.mylibrary.libraryapp.entities.Enum.RoleEnum;
 import com.mylibrary.libraryapp.repositories.UserRepository;
-import jakarta.persistence.EntityManager;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -19,7 +18,7 @@ public class UserSeeder implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) {
-        if (userRepository.findByFullName("admin").isEmpty()) {
+        if (userRepository.findByFullNameContaining("admin").isEmpty()) {
             UserEntity admin = UserEntity.builder()
                     .fullName("admin")
                     .password(passwordEncoder.encode("admin123"))
@@ -32,7 +31,7 @@ public class UserSeeder implements ApplicationRunner {
             System.out.println("✅ Admin user seeded.");
         }
 
-        if (userRepository.findByFullName("user").isEmpty()) {
+        if (userRepository.findByFullNameContaining("user").isEmpty()) {
             UserEntity user = UserEntity.builder()
                     .fullName("user")
                     .password(passwordEncoder.encode("user123"))

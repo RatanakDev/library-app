@@ -1,7 +1,7 @@
 package com.mylibrary.libraryapp.dto.response;
 
-import com.mylibrary.libraryapp.entities.GenderEnum;
-import com.mylibrary.libraryapp.entities.RoleEnum;
+import com.mylibrary.libraryapp.entities.Enum.GenderEnum;
+import com.mylibrary.libraryapp.entities.Enum.RoleEnum;
 import lombok.*;
 
 @Getter

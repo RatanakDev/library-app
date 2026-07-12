@@ -1,8 +1,9 @@
 package com.mylibrary.libraryapp.entities;
 
+import com.mylibrary.libraryapp.entities.Enum.GenderEnum;
+import com.mylibrary.libraryapp.entities.Enum.RoleEnum;
 import jakarta.persistence.*;
 import lombok.*;
-import org.springframework.security.core.userdetails.UserDetails;
 
 @Getter
 @Setter
@@ -12,9 +13,6 @@ import org.springframework.security.core.userdetails.UserDetails;
 @Entity
 @Table(name = "users")
 public class UserEntity {
-
-    @Version
-    private Long version;
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)

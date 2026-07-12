@@ -14,3 +14,10 @@ server:
 jwt:
   secret: ef02d4a1a8d53d52403cea68a32c0fc9dd51b651e130893867e5b92b712eab88
   expiration: 86400000 # 24h in ms
+logging:
+  level:
+    root: INFO
+    org.springframework: DEBUG
+    com.mylibrary.libraryapp: DEBUG
+    org.hibernate.SQL: DEBUG
+    org.hibernate.orm.jdbc.bind: TRACE

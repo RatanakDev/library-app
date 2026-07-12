@@ -25,10 +25,24 @@ dependencies {
 	compileOnly 'org.projectlombok:lombok'
 	runtimeOnly 'org.postgresql:postgresql'
 
+//	validation
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
+
 	// JJWT
 	implementation 'io.jsonwebtoken:jjwt-api:0.12.6'
 	runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.12.6'
 	runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.12.6'
+
+	// MapStruct core
+	implementation 'org.mapstruct:mapstruct:1.6.3'
+	annotationProcessor 'org.mapstruct:mapstruct-processor:1.6.3'
+	// If you're using Lombok too (you are, based on @RequiredArgsConstructor)
+	// Lombok must be processed BEFORE MapStruct, so order matters
+	compileOnly 'org.projectlombok:lombok:1.18.36'
+	annotationProcessor 'org.projectlombok:lombok:1.18.36'
+	annotationProcessor 'org.projectlombok:lombok-mapstruct-binding:0.2.0'
+	// For tests, if you use mappers in test code
+	testAnnotationProcessor 'org.mapstruct:mapstruct-processor:1.6.3'
 
 
 

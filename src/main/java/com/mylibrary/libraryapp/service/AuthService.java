@@ -32,11 +32,10 @@ public class AuthService {
 
             UserEntity user = userPrincipal.getUser();
             String token = jwtService.generateToken(user);
-            return  new AuthResponse("Login succesfully", token);
+            return  new AuthResponse(token,"Login succesfully");
         }
 
         throw new UsernameNotFoundException("Invalid username or password");
-
 
     }
 }
