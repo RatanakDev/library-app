@@ -23,8 +23,7 @@ public class BorrowBookController {
     private final BorrowBookService borrowBookService;
 
     @PostMapping
-    public ResponseEntity<MessageResponse<BorrowsBooksResponse>> createBorrow
-            (
+    public ResponseEntity<MessageResponse<BorrowsBooksResponse>> createBorrow(
             @Valid @RequestBody BorrowsBookRequest request) {
         BorrowsBooksResponse response = borrowBookService.createBorrow(request);
         return ResponseEntity.status(HttpStatus.CREATED)
